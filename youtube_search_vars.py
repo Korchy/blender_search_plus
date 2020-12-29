@@ -18,6 +18,10 @@ class YOUTUBE_SEARCH_vars(PropertyGroup):
         update=lambda self, context: self.on_update(context=context)
     )
 
+    search_old: StringProperty(
+        default='',
+    )
+
     prefix: StringProperty(
         name='Prefix',
         default=''
@@ -34,12 +38,14 @@ class YOUTUBE_SEARCH_vars(PropertyGroup):
     )
 
     def on_update(self, context):
-        bpy.ops.youtube_search.search(
-            search=self.search,
-            prefix=self.prefix,
-            sort_by_date=self.sort_by_date,
-            region=self.region
-        )
+        if self.search != self.search_old:
+            self.search_old = self.search
+            bpy.ops.youtube_search.search(
+                search=self.search,
+                prefix=self.prefix,
+                sort_by_date=self.sort_by_date,
+                region=self.region
+            )
 
 
 def register():
