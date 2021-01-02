@@ -2,7 +2,7 @@
 # interplanety@interplanety.org
 #
 # GitHub
-#    https://github.com/Korchy/blender_youtube_search
+#    https://github.com/Korchy/blender_search_plus
 
 import bpy
 from bpy.types import Operator

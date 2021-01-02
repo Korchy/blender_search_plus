@@ -2,7 +2,7 @@
 # interplanety@interplanety.org
 #
 # GitHub
-#    https://github.com/Korchy/blender_youtube_search
+#    https://github.com/Korchy/blender_search_plus
 
 import json
 import os

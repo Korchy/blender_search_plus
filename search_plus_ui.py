@@ -2,7 +2,7 @@
 # interplanety@interplanety.org
 #
 # GitHub
-#    https://github.com/Korchy/blender_youtube_search
+#    https://github.com/Korchy/blender_search_plus
 
 from bpy.types import Panel
 from bpy.utils import register_class, unregister_class

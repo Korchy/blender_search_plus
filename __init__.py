@@ -2,16 +2,16 @@
 # interplanety@interplanety.org
 #
 # GitHub
-#    https://github.com/Korchy/blender_youtube_search
+#    https://github.com/Korchy/blender_search_plus
 
-from . import youtube_search_ops
-from . import youtube_search_ui
-from . import youtube_search_vars
+from . import search_plus_ops
+from . import search_plus_ui
+from . import search_plus_vars
 from .addon import Addon
 
 
 bl_info = {
-    'name': 'youtube_search',
+    'name': 'search_plus',
     'category': 'All',
     'author': 'Nikita Akimov, Alexander Reshetnyak',
     'version': (1, 0, 0),
@@ -25,18 +25,18 @@ bl_info = {
 
 def register():
     if not Addon.dev_mode():
-        youtube_search_vars.register()
-        youtube_search_ops.register()
-        youtube_search_ui.register()
+        search_plus_vars.register()
+        search_plus_ops.register()
+        search_plus_ui.register()
     else:
         print('It seems you are trying to use the dev version of the ' + bl_info['name'] + ' add-on. It may work not properly. Please download and use the release version')
 
 
 def unregister():
     if not Addon.dev_mode():
-        youtube_search_ui.unregister()
-        youtube_search_ops.unregister()
-        youtube_search_vars.unregister()
+        search_plus_ui.unregister()
+        search_plus_ops.unregister()
+        search_plus_vars.unregister()
 
 
 if __name__ == '__main__':
