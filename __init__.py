@@ -18,8 +18,8 @@ bl_info = {
     'version': (1, 0, 0),
     'blender': (2, 91, 0),
     'location': 'Properties window - Render Properties tab',
-    'wiki_url': 'https://b3d.interplanety.org/en/blender-add-on-youtube-search/',
-    'tracker_url': 'https://b3d.interplanety.org/en/blender-add-on-youtube-search/s',
+    'wiki_url': 'https://b3d.interplanety.org/en/blender-add-on-search-plus/',
+    'tracker_url': 'https://b3d.interplanety.org/en/blender-add-on-search-plus/',
     'description': 'Quick search on youtube'
 }
 

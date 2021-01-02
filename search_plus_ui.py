@@ -23,10 +23,24 @@ class SEARCH_PLUS_PT_panel(Panel):
         # search field
         row.prop(data=search_vars, property='search_str', text='')
         # search button
-        op = row.operator('search_plus.search', text='', icon='VIEWZOOM')
+        row.operator('search_plus.search', text='', icon='VIEWZOOM')
         # params
         row = layout.row()
         row.prop(data=pref_vars, property='search_in', expand=True)
+        if 'GOOGLE' in pref_vars.search_in:
+            box = layout.box()
+            box.label(text='Google')
+            box.prop(pref_vars, 'google_addition_words')
+        if 'B_STACK_EXCHANGE' in pref_vars.search_in:
+            box = layout.box()
+            box.label(text='Blender Stack Exchange')
+            box.prop(pref_vars, 'b_s_e_tags')
+            box.prop(pref_vars, 'b_s_e_answers')
+        if 'YOUTUBE' in pref_vars.search_in:
+            box = layout.box()
+            box.label(text='YouTube')
+            box.prop(pref_vars, 'youtube_sort_by')
+            box.prop(pref_vars, 'youtube_addition_words')
 
 
 def register():
