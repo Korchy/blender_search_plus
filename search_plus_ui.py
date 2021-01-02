@@ -8,36 +8,30 @@ from bpy.types import Panel
 from bpy.utils import register_class, unregister_class
 
 
-class YOUTUBE_SEARCH_PT_panel(Panel):
-    bl_idname = 'YOUTUBE_SEARCH_PT_panel'
-    bl_label = 'YouTube Search'
-    bl_space_type = 'PROPERTIES'
-    bl_region_type = 'WINDOW'
-    bl_category = 'Search'
-    bl_options = {'DEFAULT_CLOSED'}
+class SEARCH_PLUS_PT_panel(Panel):
+    bl_idname = 'SEARCH_PLUS_PT_panel'
+    bl_label = 'Search Plus'
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'UI'
+    bl_category = 'Search Plus'
 
     def draw(self, context):
         layout = self.layout
-        op_vars = context.window_manager.youtube_search_vars
+        search_vars = context.window_manager.search_plus_vars
+        pref_vars = context.preferences.addons[__package__].preferences
         row = layout.row()
         # search field
-        row.prop(data=op_vars, property='search', text='')
+        row.prop(data=search_vars, property='search_str', text='')
         # search button
-        op = row.operator('youtube_search.search', text='', icon='VIEWZOOM')
-        op.search = op_vars.search
-        op.prefix = op_vars.prefix
-        op.sort_by_date = op_vars.sort_by_date
-        op.region = op_vars.region
+        op = row.operator('search_plus.search', text='', icon='VIEWZOOM')
         # params
         row = layout.row()
-        row.prop(data=op_vars, property='prefix')
-        row.prop(data=op_vars, property='region')
-        layout.prop(data=op_vars, property='sort_by_date')
+        row.prop(data=pref_vars, property='search_in', expand=True)
 
 
 def register():
-    register_class(YOUTUBE_SEARCH_PT_panel)
+    register_class(SEARCH_PLUS_PT_panel)
 
 
 def unregister():
-    unregister_class(YOUTUBE_SEARCH_PT_panel)
+    unregister_class(SEARCH_PLUS_PT_panel)

@@ -4,6 +4,7 @@
 # GitHub
 #    https://github.com/Korchy/blender_search_plus
 
+from . import search_plus_preferences
 from . import search_plus_ops
 from . import search_plus_ui
 from . import search_plus_vars
@@ -25,6 +26,7 @@ bl_info = {
 
 def register():
     if not Addon.dev_mode():
+        search_plus_preferences.register()
         search_plus_vars.register()
         search_plus_ops.register()
         search_plus_ui.register()
@@ -37,6 +39,7 @@ def unregister():
         search_plus_ui.unregister()
         search_plus_ops.unregister()
         search_plus_vars.unregister()
+        search_plus_preferences.unregister()
 
 
 if __name__ == '__main__':
