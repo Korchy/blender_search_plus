@@ -12,7 +12,7 @@ from .addon import Addon
 
 
 bl_info = {
-    'name': 'search_plus',
+    'name': 'Search Plus',
     'category': 'All',
     'author': 'Nikita Akimov, Alexander Reshetnyak',
     'version': (1, 0, 0),
