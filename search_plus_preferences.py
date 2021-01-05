@@ -16,7 +16,7 @@ class SEARCH_PLUS_preferences(AddonPreferences):
         name='Search in',
         items=[
             ('GOOGLE', 'Google', 'Google'),
-            ('B_STACK_EXCHANGE', 'Stack Exchange Blender', 'Blender Stack Exchange'),
+            ('B_STACK_EXCHANGE', 'Blender Stack Exchange', 'Blender Stack Exchange'),
             ('YOUTUBE', 'YouTube', 'YouTube')
         ],
         options={'ENUM_FLAG'},
@@ -46,7 +46,7 @@ class SEARCH_PLUS_preferences(AddonPreferences):
     )
 
     b_s_e_answers = IntProperty(
-        name='Min answers',
+        name='Minimum answers',
         subtype='UNSIGNED',
         min=0,
         default=0
